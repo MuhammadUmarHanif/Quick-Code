@@ -600,7 +600,7 @@ const VoiceChat = ({ socketRef, roomId, username }) => {
               onClick={toggleMute}
               title={isMuted ? "Unmute" : "Mute"}
             >
-              {isMuted ? "🔇" : "🎤"}
+              {isMuted ? "Unmute" : "Mute"}
             </button>
 
             <button
@@ -608,7 +608,7 @@ const VoiceChat = ({ socketRef, roomId, username }) => {
               onClick={toggleDeafen}
               title={isDeafened ? "Undeafen" : "Deafen"}
             >
-              {isDeafened ? "🔈" : "🔊"}
+              {isDeafened ? "Undeafen" : "Deafen"}
             </button>
 
             <button
@@ -616,7 +616,7 @@ const VoiceChat = ({ socketRef, roomId, username }) => {
               onClick={endVoiceCall}
               title="Leave Call"
             >
-              📞
+              Leave Call
             </button>
           </div>
         )}
