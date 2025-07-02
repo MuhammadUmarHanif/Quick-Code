@@ -328,3 +328,72 @@ margin-left: 650px;
       gap: 10px;
   }
 }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2001;
+}
+.hamburger .bar {
+  width: 28px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+  nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    background: #1c1e29;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    z-index: 2000;
+    display: none;
+  }
+  nav.open {
+    display: flex;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li {
+    width: 100%;
+    padding: 16px 0;
+    text-align: left;
+    border-bottom: 1px solid #333;
+  }
+  .auth-buttons {
+    display: none;
+    flex-direction: column;
+    width: 100vw;
+    background: #1c1e29;
+    position: absolute;
+    top: 220px;
+    left: 0;
+    z-index: 2000;
+    padding: 0 0 16px 0;
+  }
+  .auth-buttons.open {
+    display: flex;
+  }
+}

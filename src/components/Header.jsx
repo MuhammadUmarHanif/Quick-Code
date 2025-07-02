@@ -15,6 +15,7 @@ const Header = () => {
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   const [fullname, setfullname] = useState("");
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const handleLogin = () => {
     console.log("Logging in with:", username, password);
@@ -31,7 +32,12 @@ const Header = () => {
       <div className="logo">
         <img src='logo.png' alt="" className="logo-img" /> QUICK CODE
       </div>
-      <nav>
+      <button className="hamburger" onClick={() => setMobileNavOpen(v => !v)} aria-label="Toggle navigation">
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
+      <nav className={mobileNavOpen ? 'open' : ''}>
         <ul>
           <li><Link to="/" > <div className='home'>
           <House />
@@ -59,7 +65,7 @@ const Header = () => {
         <div className="faqs1"><Rocket /></div>FAQs</Link></li>
         </ul>
       </nav>
-      <div className="auth-buttons">
+      <div className={`auth-buttons${mobileNavOpen ? ' open' : ''}`}>
       {/* Log In Button */}
       <button className="login-btn" onClick={() => setShowModal(true)}>
         <LogIn /> Log In
