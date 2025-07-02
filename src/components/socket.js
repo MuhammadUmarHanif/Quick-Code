@@ -7,6 +7,6 @@ export const initSocket = async () => {
         timeout: 10000,
         transports: ['websocket', 'polling']
     };
-    const serverUrl = 'https://quick-code-jbkb.onrender.com/';
+    const serverUrl = 'https://quick-code-c94c.onrender.com';
     return io(serverUrl, options);
 };
