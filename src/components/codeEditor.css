@@ -257,6 +257,23 @@
     }
 }
 
+@media (max-width: 900px) {
+    .editor-main {
+        flex-direction: column;
+    }
+    .code-section, .io-section {
+        width: 100%;
+        min-width: 0;
+        border-right: none;
+        border-bottom: 1px solid #404040;
+    }
+    .CodeMirror, .input-textarea {
+        width: 100% !important;
+        min-width: 0;
+        font-size: 1rem;
+    }
+}
+
 /* Scrollbar styling */
 .output-display::-webkit-scrollbar,
 .input-textarea::-webkit-scrollbar {

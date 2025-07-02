@@ -103,4 +103,21 @@
 
   }
  
+@media (max-width: 900px) {
+  .mainWrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .aside {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: flex-start;
+    min-height: unset;
+  }
+  .editorWrap {
+    width: 100%;
+    height: auto;
+  }
+}
   

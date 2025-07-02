@@ -573,3 +573,10 @@ margin-left: 380px;
   }
 }
 
+@media (max-width: 900px) {
+  .card {
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+
