@@ -86,7 +86,7 @@ const Editor = () => {
       });
 
       // Listening for language changes
-      socketRef.current.on(ACTIONS.LANGUAGE_CHANGE, ({ language }) => {
+      socketRef.current.on(ACTIONS.LANGUAGE_CHANGE, ({ languageId }) => {
         // Language changes are handled in CodeEditor component
       });
 
