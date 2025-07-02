@@ -87,7 +87,8 @@ const CodeEditor = ({ socketRef, roomId, onCodeChange }) => {
         setInput(input);
       };
 
-      const handleLanguageChange = ({ language }) => {
+      const handleLanguageChange = ({ languageId }) => {
+        const language = LANGUAGE_OPTIONS.find(lang => lang.id === languageId);
         setSelectedLanguage(language);
         if (editorRef.current) {
           editorRef.current.setOption("mode", language.mode);
@@ -148,7 +149,7 @@ const CodeEditor = ({ socketRef, roomId, onCodeChange }) => {
           editorRef.current.setValue(language.template || "");
         }
       }
-      socketRef.current?.emit(ACTIONS.LANGUAGE_CHANGE, { roomId, language });
+      socketRef.current?.emit(ACTIONS.LANGUAGE_CHANGE, { roomId, languageId: language.id });
     },
     [roomId, socketRef]
   );
