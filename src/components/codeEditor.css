@@ -273,6 +273,69 @@
         font-size: 1rem;
     }
 }
+@media (max-width: 480px) {
+    .editor-header {
+      padding: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  
+    .language-selector {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+  
+    .language-selector label {
+      font-size: 14px;
+    }
+  
+    .language-selector select {
+      width: 100%;
+      font-size: 14px;
+    }
+  
+    .run-button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+    }
+  
+    .editor-main {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .code-section,
+    .io-section {
+      flex: unset;
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #404040;
+    }
+  
+    .input-textarea,
+    .output-display {
+      font-size: 13px;
+      padding: 10px;
+    }
+  
+    .section-header {
+      font-size: 14px;
+      padding: 8px 10px;
+    }
+  
+    .execution-time {
+      font-size: 11px;
+    }
+  
+    .CodeMirror {
+      font-size: 13px !important;
+      padding: 8px;
+    }
+  }
+  
 
 /* Scrollbar styling */
 .output-display::-webkit-scrollbar,

@@ -120,4 +120,98 @@
     height: auto;
   }
 }
+@media (max-width: 600px) {
+  .mainWrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .aside {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1c1e29;
+    gap: 12px;
+  }
+
+  .asideInner {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .logoImage {
+    height: 40px;
+  }
+
+  .tag {
+    font-size: 10px;
+    margin-top: 5px;
+    margin-left: 0;
+  }
+
+  .asideInner h1 {
+    font-size: 16px;
+    margin: 6px 0;
+  }
+
+  .asideInner h3 {
+    font-size: 14px;
+    margin: 8px 0;
+    justify-content: center;
+  }
+
+  .clientsList {
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .client {
+    font-size: 12px;
+  }
+
+  .btn {
+    width: 95%;
+    padding: 10px;
+    font-size: 14px;
+    margin: 5px auto;
+  }
+
+  .editorWrap {
+    text-align: left;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+
+  .copyBtn,
+  .leaveBtn {
+    width: 95%;
+  }
+
+  .copyBtn:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .leaveBtn:hover {
+    background-color: #d32f2f;
+  }
+
+  hr {
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
+
   

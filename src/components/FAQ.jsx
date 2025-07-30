@@ -38,7 +38,7 @@ const FAQ = () => {
       <h1>FAQ</h1>
       <p className="description">
         Here you can find most frequent asked questions. Feel free to{" "}
-        <a href="mailto:contact@hanifumar169@gmai.com">contact me</a> if you still have a different one.
+        <a href="mailto:contact@hanifumar169@gmail.com">contact me</a> if you still have a different one.
       </p>
       {faqData.map((item, index) => (
         <div className="faq-item" key={index}>

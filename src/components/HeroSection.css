@@ -556,27 +556,190 @@ margin-left: 380px;
   color: #7d5fff;
 }
 /* Responsive Design */
+/* Responsive for Tablets and Smaller Screens */
+/* Universal Mobile Reset */
+/* Universal Mobile Reset */
 @media (max-width: 768px) {
-  .card {
-    width: calc(50% - 20px); /* Adjust card width for tablets */
-    margin: 10px; /* Adds spacing between cards */
+  body {
+    overflow-x: hidden;
   }
+
+  .hero {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    margin-top: 0;
+    padding: 40px 20px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 10px;
+  }
+  .createlogo img {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    padding-left: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .blob {
+    display:grid;
+    margin-left: -700px;
+    margin-top: 390px;
+    height:380px;
+    width: 380px;
+  }
+
+  .hero-image {
+    margin-top: 0;
+    padding-top: 20px;
+    width: 90%;
+    height: auto;
+  }
+
+  .slider {
+    padding: 2em 0.5em;
+    height: auto;
+  }
+
+  .slide img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .pic img,
+  .join img,
+  .clr img {
+    margin: 20px auto;
+    display: block;
+    width: 90%;
+    height: auto;
+  }
+
+  .text h2,
+  .text p,
+  .newp p,
+  .clr2 h2,
+  .clr2 p {
+    margin: 10px auto;
+    text-align: center;
+    float: none;
+    width: 90%;
+  }
+
+  .language {
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 100px;
+  }
+
+  .clr2 {
+    margin-top: 30px;
+  }
+
+  .features {
+    padding: 50px 10px;
+    height: auto;
+  }
+
+  .main {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card {
+    width: 90%;
+    margin: 0 auto 15px;
+  }
+
+  .modal-content-create {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .createlogo img {
+    height: 200px;
+    margin: 0 auto 10px;
+  }
+
+  .input-field {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .modal-content-create h2,
+  .modal-content-create p {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .createRoom-btn,
+  .close-btn {
+  margin-left: 10px;
+    margin-right: 10px;
+    display: block;
+    width: 100px;
+    height: 35px;
+    font-size: 10px;
+    margin-top: 20px;
+  }
+
+  .createInfo {
+    text-align: center;
+    margin-left: 0;
+  }
+  .hero2 h1{
+    font-size: 20px;
+  }
+  .text h2{
+    font-size: 20px;
+  }
+  
 }
 
+/* Extra Small Screens */
 @media (max-width: 480px) {
-  .card {
-    width: 100%; /* Full width for small screens */
-    margin-bottom: 10px; /* Adds spacing for stacking layout */
+  .hero-title {
+    font-size: 1.5rem;
   }
-  .card img {
-    height: auto; /* Ensures the image remains proportional */
-  }
-}
 
-@media (max-width: 900px) {
-  .card {
+  .hero-subtitle {
+    font-size: 15px;
+  }
+
+  button {
     width: 100%;
-    margin: 8px 0;
+    font-size: 1rem;
+  }
+
+  .card {
+    width: 95%;
+    margin: 10px auto;
+  }
+
+  .card img {
+    height: auto;
+  }
+
+  .createRoom-btn,
+  .close-btn {
+    width: 100%;
+    font-size: 1rem;
   }
 }
-
