@@ -126,7 +126,7 @@ const HeroSection = () => {
                     <code>
                       <span className="keyword">import</span> React, &#123; useState &#125; <span className="keyword">from</span> <span className="string">'react'</span>;<br />
                       <span className="keyword">import</span> &#123; Socket &#125; <span className="keyword">from</span> <span className="string">'socket.io'</span>;<br /><br />
-                      <span className="comment">// Real-Time Collaborative Sync</span><br />
+                      <span className="comment">{'// Real-Time Collaborative Sync'}</span><br />
                       <span className="keyword">function</span> <span className="function">collaborate</span>(user) &#123;<br />
                       &nbsp;&nbsp;console.<span className="function">log</span>(<span className="string">`$&#123;user&#125; joined code editor!`</span>);<br />
                       &nbsp;&nbsp;<span className="keyword">return</span> <span className="boolean">true</span>;<br />
