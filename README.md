@@ -5,7 +5,7 @@ QuickCode is a production-ready, real-time collaborative development environment
 ---
 
 ## Key Features
-
+ 
 * **Real-Time Multi-User Collaboration**
   * Instant, conflict-free text synchronization powered by **Socket.io**.
   * Dynamic visual user presence with active cursor indicators and client avatars.
