@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from 'framer-motion';
+import { Plus, Minus, HelpCircle } from 'lucide-react';
 import "./FAQ.css";
 
 const FAQ = () => {
@@ -8,25 +10,28 @@ const FAQ = () => {
     {
       question: "What can I use Quick Code for?",
       answer:
-        "You can use Quick Code for everything code sharing, like pair programming, share code online with your team, tech interviews, teaching... you name it.",
+        "Quick Code is ideal for collaborative work, pair programming, technical interviews, hosting classes or workshops, sharing code snippets, or debugging problems in real-time with colleagues.",
     },
     {
-      question: "Login Is Must Required For Join Room?",
+      question: "Is login required to join a room?",
       answer:
-        "No You Can Join Room Without Login Or Signup. You Just Need Of Room Id.",
+        "No. You can join and collaborate in any room without registering or logging in. You simply need the shared Room ID and a nickname.",
     },
     {
-      question: "How i Can Compile Code In QickCode?",
-      answer: "There Is A Built in Compiler.You Can Compile Code Within Code Editor.",
+      question: "How do I run and compile my code?",
+      answer:
+        "Quick Code features an integrated compiler interface powered by Judge0 APIs. Simply choose your programming language from the dropdown menu and press 'Run Code' to execute and view stdout/stderr output.",
     },
     {
-        question: "EveryOne Can See the Changings Of Code?",
-        answer: "YES Everyone Can See The Changings of Code In Real-Time.",
-      },
-      {
-        question: "Can We Communicate with Others?",
-        answer: "YES You Can Communicate With Others Via Voice Communication.",
-      },
+      question: "Can everyone in the room see code edits?",
+      answer:
+        "Yes, all edits are transmitted in real-time to every user currently connected to the same Room ID using modern WebSocket architecture.",
+    },
+    {
+      question: "Is there voice communication available?",
+      answer:
+        "Yes, we have integrated voice channels directly inside each room. As long as you give browser permission, you can talk with your team while editing code.",
+    },
   ];
 
   const toggleFAQ = (index) => {
@@ -34,24 +39,54 @@ const FAQ = () => {
   };
 
   return (
-    <div className="faq-container">
-      <h1>FAQ</h1>
-      <p className="description">
-        Here you can find most frequent asked questions. Feel free to{" "}
-        <a href="mailto:contact@hanifumar169@gmail.com">contact me</a> if you still have a different one.
-      </p>
-      {faqData.map((item, index) => (
-        <div className="faq-item" key={index}>
-          <div
-            className="faq-question"
-            onClick={() => toggleFAQ(index)}
-          >
-            <span>{item.question}</span>
-            <button>{activeIndex === index ? "-" : "+"}</button>
-          </div>
-          {activeIndex === index && <p className="faq-answer">{item.answer}</p>}
+    <div className="faq-section-wrapper" id="faq-container">
+      <div className="faq-container glass-panel">
+        <div className="faq-header">
+          <HelpCircle size={32} className="faq-header-icon" />
+          <h1>Frequently Asked Questions</h1>
+          <p className="description">
+            Got questions about how Quick Code works? We've got answers. If you need further support, feel free to{" "}
+            <a href="mailto:contact@hanifumar169@gmail.com">contact us</a>.
+          </p>
         </div>
-      ))}
+        
+        <div className="faq-list">
+          {faqData.map((item, index) => {
+            const isOpen = activeIndex === index;
+            return (
+              <div 
+                className={`faq-item ${isOpen ? 'active' : ''}`} 
+                key={index}
+              >
+                <div
+                  className="faq-question"
+                  onClick={() => toggleFAQ(index)}
+                >
+                  <span className="faq-q-text">{item.question}</span>
+                  <button className="faq-toggle-btn" aria-label="Toggle answer">
+                    {isOpen ? <Minus size={18} /> : <Plus size={18} />}
+                  </button>
+                </div>
+                
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                      style={{ overflow: 'hidden' }}
+                    >
+                      <p className="faq-answer">{item.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };

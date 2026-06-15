@@ -1,125 +1,162 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #1a1a1a;
-  color: #fff;
-}
-
-.container {
+/* Cards Main Container Section */
+.cards-container-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
   text-align: center;
-  background-color: #1a1a1a;
-  padding: 1rem;
 }
 
+/* Logos Section Styling */
 .logos-section {
-  margin-bottom: 2rem;
+  margin-bottom: 70px;
 }
 
 .logos-heading {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  justify-content: center;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 25px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
-.logos {
+.logos-wrapper {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--border-glass);
+  padding: 30px;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  align-items: center;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.01);
 }
 
-.logos img {
-  max-width: 100%;
+.brands-logo-image {
+  max-width: 80%;
   height: auto;
+  opacity: 0.55;
+  filter: brightness(0.8) contrast(1.2);
 }
 
-.features-section {
+.brands-logo-fallback {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 30px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.brands-logo-image + .brands-logo-fallback {
+  display: none;
+}
+
+/* 3D Tilt Card Grid */
+.features-section-cards {
+  display: flex;
   justify-content: center;
+  perspective: 1000px;
 }
 
-.feature {
+.cards-perspective-grid {
   width: 100%;
-  max-width: 300px;
-  text-align: left;
-  background: #1a1a1a;
-  padding: 1rem;
-  border-radius: 8px;
-  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-.feature h2 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.feature-tilt-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  padding: 40px 30px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 250px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
-.feature p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-left: -3px;
-  text-align: left;
+.feature-tilt-card:hover {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 15px 35px var(--primary-glow);
 }
 
-/* Responsive Styling */
+.card-card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(125, 95, 255, 0.1) 0%, rgba(0, 0, 0, 0) 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.feature-tilt-card:hover .card-card-glow {
+  opacity: 1;
+}
+
+.tilt-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+.tilt-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-left: 0;
+}
+
+/* Responsive Grid Rules */
+@media (max-width: 992px) {
+  .cards-perspective-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
 @media (max-width: 768px) {
-  .container {
-    padding: 0.8rem;
+  .cards-container-section {
+    margin: 40px auto;
   }
 
-  .logos-heading {
-    font-size: 1.1rem;
-    text-align: center;
-    padding: 0 10px;
+  .logos-section {
+    margin-bottom: 40px;
   }
 
-  .logos {
+  .logos-wrapper {
+    padding: 20px;
+  }
+
+  .brands-logo-fallback {
+    gap: 15px;
+    font-size: 1rem;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  .logos img {
-    max-width: 100px;
-    height: auto;
+  .cards-perspective-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .features-section {
-    flex-direction: column;
+  .feature-tilt-card {
+    padding: 30px 20px;
+    min-height: auto;
+    text-align: center;
     align-items: center;
-    gap: 1rem;
-  }
-
-  .feature {
-    width: 90%;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .feature h2,
-  .feature p {
-    text-align: center;
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .logos-heading {
-    font-size: 0.95rem;
-  }
-
-  .logos img {
-    max-width: 300px;
-  }
-
-  .feature h2 {
-    font-size: 1rem;
-  }
-
-  .feature p {
-    font-size: 0.8rem;
-    line-height: 1.4;
   }
 }
