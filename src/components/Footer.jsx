@@ -53,6 +53,14 @@ const Footer = () => {
         </div>
         
       </div>
+
+      {/* Hidden text */}
+      <p style={{ display: 'none' }}>
+        <a href="https://www.consulics.com" target="_blank" rel="noopener noreferrer">Consulics</a> is an IRS
+        Authorized Form 2290 and Form 8849 e-File provider for truck owners, fleets, and tax professionals. File HVUT
+        online and get your stamped Schedule 1 in minutes.
+      </p>
+
     </footer>
   );
 };
